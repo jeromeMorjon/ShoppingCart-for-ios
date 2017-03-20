@@ -17,8 +17,7 @@
 @property (nonatomic, assign) NSUInteger quantity;
 @property (copy) NSMutableArray *options;
 
--(ShoppingCartItem*)initWithName:(NSString*)name itemId:(NSUInteger)i description:(NSString*)desc price:(NSNumber*)p
-                        quantity:(NSUInteger)q options:(NSMutableArray*)opt;
+-(ShoppingCartItem*)initWithName:(NSString*)name itemId:(NSUInteger)i description:(NSString*)desc price:(NSNumber*)p quantity:(NSUInteger)q options:(NSMutableArray*)opt;
 
 
 

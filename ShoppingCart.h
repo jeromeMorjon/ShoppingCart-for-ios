@@ -21,7 +21,7 @@
 -(ShoppingCart*)initWithCartTitle:(NSString *)title;
 -(void)addItem:(ShoppingCartItem*)item;
 -(void)removeItem:(ShoppingCartItem*)item;
--(void)update:(ShoppingCartItem*)item;
+-(void)update:(ShoppingCartItem*)item qty:(NSInteger)count;
 -(NSUInteger)count;
 -(NSUInteger)total;
 -(NSMutableArray*)getShoppingList;

@@ -10,10 +10,13 @@
 
 @implementation ShoppingCartItem
 
--(ShoppingCartItem*)initWithName:(NSString*)name itemId:(NSUInteger)i description:(NSString*)desc price:(NSNumber*)p
-                        quantity:(NSUInteger)q options:(NSMutableArray*)opt
+
+/*
+ * Initialize an item and return it
+ */
+-(ShoppingCartItem*)initWithName:(NSString*)name itemId:(NSUInteger)i description:(NSString*)desc price:(NSNumber*)p quantity:(NSUInteger)q options:(NSMutableArray*)opt
 {
-    // Initialize an item and return it
+    
     
     _itemId = i; // generat a random number
     _name = name;

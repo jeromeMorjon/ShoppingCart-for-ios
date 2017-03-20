@@ -10,8 +10,11 @@
 
 @implementation ShoppingCart
 
-#pragma mark Singleton method   
+#pragma mark instance
 
+/*
+ * Make a unique instance to retrieve the cart
+ */
 + (instancetype)sharedInstance
 {
     static ShoppingCart *sharedInstance = nil;
@@ -22,9 +25,12 @@
     return sharedInstance;
 }
 
+
+/*
+ * make a new instance of shopping cart
+ */
 -(id)init
 {
-    //make a new instance of shopping cart
      if (self = [super init]) {
          
          // Init an empty cart with title 'default'
@@ -34,12 +40,21 @@
     return self;
 }
 
+#pragma mark methods
+
+/*
+ * Init a cart with a specific name
+ */
 -(ShoppingCart *)initWithCartTitle:(NSString *)title
 {
-    // Init a cart with a specific name
+    
     return nil;
 }
 
+
+/*
+ * Add an item in the actual cart
+ */
 -(void)addItem:(ShoppingCartItem *)item
 {
     //add an item in the cart list
@@ -57,9 +72,12 @@
     
     if(!exist)
         [_listItem addObject:item];
-    
 }
 
+
+/*
+ * update the quantity of an item
+ */
 -(void)update:(ShoppingCartItem*)item qty:(NSInteger)count
 {
     //update the quantity of an item
@@ -74,21 +92,26 @@
     }
 }
 
+
+/*
+ * Return the shopping list
+ */
 -(NSMutableArray*)getShoppingList
 {
-    // return the shopping list
     return _listItem;
 }
 
+/*
+ * return the count of item in the shopping cart
+ */
 -(NSUInteger)count
 {
-    // return the count of item in the shopping cart
     return [_listItem count];
 }
 
+
 -(NSUInteger)total
 {
-    //return the total price of the shopping cart
     int total = 0;
     
     if([_listItem count] > 0)
@@ -103,15 +126,26 @@
     return total;
 }
 
+/*
+ * Remove an item from the shopping cart
+ */
 -(void)removeItem:(ShoppingCartItem*)item
 {
-    // Remove an item from the shopping cart
     [_listItem removeObject:item];
 }
 
-
 - (void)dealloc {
     // Should never be called, but just here for clarity really.
+}
+
+-(void) destroy
+{
+    
+}
+
+-(id)content
+{
+    return nil;
 }
 
 
